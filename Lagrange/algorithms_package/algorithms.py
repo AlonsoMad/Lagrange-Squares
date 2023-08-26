@@ -3,6 +3,9 @@ import numpy as np
 class finders:
     def __init__(self):
         self.iteration = 0
+
+    def clearIteration(self):
+        self.iteration = 0
     
     def findLagSq(self, n):
         arr = [0, 0, 0, 0]

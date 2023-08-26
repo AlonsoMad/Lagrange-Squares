@@ -4,8 +4,8 @@ def main():
     n = 100
     find = finders()
     test = tests()
-    result, potato ,iterations = find.findLagSq2(2023)
-    print(result, iterations, potato)
+    result, iterations = find.findLagSq(5652)
+    print(result, iterations)
 
 if __name__ == "__main__":
     main()

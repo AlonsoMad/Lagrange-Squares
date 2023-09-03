@@ -1,6 +1,7 @@
 import numpy as np
+from techniques import mathTechniques
 
-class finders:
+class Finders:
     def __init__(self):
         self.iteration = 0
 
@@ -17,14 +18,17 @@ class finders:
             if (i == raiz) and (np.sum(arr) != n):
                 i = 0
                 j += 1
+                arr[0] = i**2
                 arr[1] = j**2
                 if (j == raiz) and (np.sum(arr) != n):
                     j = 0
                     k += 1
+                    arr[1] = j**2
                     arr[2] = k**2
                     if (k == raiz) and (np.sum(arr) != n):
                         k = 0
                         l += 1
+                        arr[2] = k**2
                         arr[3] = l**2
             self.iteration += 1
         return arr, self.iteration
@@ -40,9 +44,11 @@ class finders:
 
         raiz = int(np.floor(np.sqrt(n)))
         for i in range(raiz + 1):
+            self.iteration += 1
             arr[index] = i ** 2
             result, found, self.iteration = self.findLagSq2(n, arr, index + 1)
             if found:
                 return result, True, self.iteration
 
         return arr, False, self.iteration
+    

@@ -1,11 +1,13 @@
-from algorithms_package.algorithms import finders
-from tests_package.statistic_test import tests
+from algorithms_package.algorithms import Finders
+
 def main():
-    n = 100
-    find = finders()
-    test = tests()
-    result, iterations = find.findLagSq(5652)
-    print(result, iterations)
+    find = Finders()
+    c = True
+    while c:
+        print(find.findLagSq2(int(input("Please insert the number you want to decompose:\n"))))
+        response = input("Do you want to decompose another number: [Y/n]\n")
+        if response.upper() != 'Y':
+            c = False
 
 if __name__ == "__main__":
     main()

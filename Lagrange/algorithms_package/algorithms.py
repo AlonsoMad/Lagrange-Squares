@@ -1,9 +1,10 @@
 import numpy as np
-from techniques import mathTechniques
+from .techniques import MathTechniques
 
 class Finders:
     def __init__(self):
         self.iteration = 0
+        self.mymath = MathTechniques()
 
     def clearIteration(self):
         self.iteration = 0
@@ -51,4 +52,8 @@ class Finders:
                 return result, True, self.iteration
 
         return arr, False, self.iteration
+    
+    def MiniTest(self, a,b):
+        m = MathTechniques()
+        m.gcd(a,b)
     

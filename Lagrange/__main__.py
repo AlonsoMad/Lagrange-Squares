@@ -10,6 +10,6 @@ def main():
             c = False
 
 if __name__ == "__main__":
-    #main()
-    find = Finders()
-    find.MiniTest(646,323)
+    main()
+    #find = Finders()
+    #find.MiniTest(646,323)

@@ -53,7 +53,31 @@ class Finders:
 
         return arr, False, self.iteration
     
+    def ehrFind(self, n):
+        #Precomputation step
+        limit = int(np.floor(np.log(n))) 
+        primes = self.mymath.get_primes(limit)
+        M = np.prod(primes)           
+        #Random trials
+        s, p = self.genRandomMod(n, M)
+        while not self.mymath.is_congruent(s**2, -1, p):
+            s, p = self.genRandomMod(n, M)
+        #Denouement
+        z = self.mymath.ggcd((s + 1j), p)
+        #I need gcrd here
+        return M
+
+    def genRandomMod(self, n, M):
+        k = np.random.randint(1, n**5 + 1)
+        while k%2 == 0:
+            k = np.random.randint(1, n**5 + 1)
+        p = M*n*k - 1
+        u = np.random.randint(1, p)
+        s = (u**((p-1)/4)%p)
+        return s,p
+
+
     def MiniTest(self, a,b):
-        m = MathTechniques()
-        m.gcd(a,b)
-    
+        print(self.ehrFind(100000))
+        self.mymath.ggcd(a,b)
+        print(self.mymath.is_congruent(0, -1, None))

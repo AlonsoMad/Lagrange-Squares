@@ -6,7 +6,7 @@ class MathTechniques:
     def __init__(self):
         primes = []
 
-    def get_primes(self, n):
+    def get_primes(self, n): #Eventually change into Atkin's sieve, now is Erathostenes'
         is_prime = [True] * (n + 1)
         is_prime[0] = is_prime[1] = False
 
@@ -36,7 +36,7 @@ class MathTechniques:
             x = a if abs(a) > abs(b) else b
             y = b if abs(a) > abs(b) else a
             q = x/y
-            q = complex(round(np.real(q)), round(np.imag(q)))
+            q = complex(round(np.real(q)), round(np.imag(q))) #Rounds to next int from .5
             r = a - b*q
             self.ggcd(b, r)
 

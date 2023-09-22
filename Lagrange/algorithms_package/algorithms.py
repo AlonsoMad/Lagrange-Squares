@@ -78,6 +78,6 @@ class Finders:
 
 
     def MiniTest(self, a,b):
-        print(self.ehrFind(100000))
+        #print(self.ehrFind(100000))
         self.mymath.ggcd(a,b)
-        print(self.mymath.is_congruent(0, -1, None))
+        #print(self.mymath.is_congruent(0, -1, None))

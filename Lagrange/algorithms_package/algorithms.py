@@ -1,5 +1,6 @@
 import numpy as np
 from .techniques import MathTechniques
+from sympy import primerange
 
 class Finders:
     def __init__(self):
@@ -56,7 +57,7 @@ class Finders:
     def ehrFind(self, n):
         #Precomputation step
         limit = int(np.floor(np.log(n))) 
-        primes = self.mymath.get_primes(limit)
+        primes = list(primerange(2,limit))
         M = np.prod(primes)           
         #Random trials
         s, p = self.genRandomMod(n, M)
